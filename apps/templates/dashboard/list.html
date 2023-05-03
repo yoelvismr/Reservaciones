@@ -1,0 +1,87 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+{% block head %}
+<!-- DataTables -->
+<link rel="stylesheet" href="{% static '' %}libs/DataTables-1.13.1/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet"
+      href="{% static '' %}libs/DataTables-1.13.1/plugins/Responsive-2.4.0/css/responsive.bootstrap5.min.css">
+<link rel="stylesheet"
+      href="{% static '' %}libs/DataTables-1.13.1/plugins/Buttons-2.3.3/css/buttons.bootstrap5.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="{% static '' %}libs/adminlte-3.0.4/css/adminlte.min.css">
+
+{% block head_list %}
+
+{% endblock %}
+
+{% endblock %}
+
+{% block content %}
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="fas fa-list"></i>
+             {{ title }}
+        </h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div id="data_wrapper" class="dataTables_wrapper dt-bootstrap5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="data" class="table table-bordered table-striped dataTable dtr-inline"
+                           aria-describedby="data_info">
+                        <thead>
+                        {% block columns %}
+
+                        {% endblock %}
+                        </thead>
+                        <tbody>
+                        {% block rows %}
+
+                        {% endblock %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ create_url }}" type="button" class="btn btn-primary btn-sm">
+                        Nuevo registro
+                    </a>
+                    <a href="{{ list_url }}" type="button" class="btn btn-success btn-sm">
+                        Actualizar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+{% endblock %}
+
+{% block javascript %}
+
+<!-- ./wrapper -->
+
+<!-- DataTables -->
+<script src="{% static '' %}libs/DataTables-1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/Responsive-2.4.0/js/dataTables.responsive.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/Responsive-2.4.0/js/responsive.bootstrap5.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/JSZip-2.5.0/jszip.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/pdfmake-0.1.36/pdfmake.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/pdfmake-0.1.36/vfs_fonts.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/Buttons-2.3.3/js/dataTables.buttons.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/Buttons-2.3.3/js/buttons.bootstrap5.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/Buttons-2.3.3/js/buttons.html5.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/Buttons-2.3.3/js/buttons.print.min.js"></script>
+<script src="{% static '' %}libs/DataTables-1.13.1/plugins/Buttons-2.3.3/js/buttons.colVis.min.js"></script>
+
+<script type="application/javascript">
+        $(function () {
+            $('#data').DataTable({
+                 "responsive": true, "lengthChange": false, "autoWidth": false,
+                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#data_wrapper .col-md-6:eq(0)');
+        });
+</script>
+{% endblock %}

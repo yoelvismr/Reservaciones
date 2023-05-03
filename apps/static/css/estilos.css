@@ -1,0 +1,62 @@
+
+.animation .anim-buttons button {
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    background-color: white;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+    transition-duration: 0.4s;
+}
+
+.animation .anim-buttons button:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.animation {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.animation img, .container svg {
+    max-width: 100%;
+}
+
+
+.animation .anim-controls input {
+    max-width: 100%;
+}
+
+#card-salida, #card-estacion, #card-sondeo, #card-boletin {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+#card-salida:hover, #card-estacion:hover, #card-sondeo:hover, #card-boletin:hover {
+    opacity: 1;
+    font-size: 25px;
+}
+
+@media (min-width: 576px) {
+    .animation {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .animation  {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .animation {
+        max-width: 960px;
+    }
+}

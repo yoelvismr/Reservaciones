@@ -1,0 +1,30 @@
+{% extends 'inicio/index.html' %}
+
+{% block content %}
+
+<div class="row row-cols-1 row-cols-md-3 g-2">
+
+    {% for c in object_list %}
+
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ c.imagen.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ c.nombre }} | {{ c.categoria }} </h5>
+                <p class="card-text">{{ c.descripcion }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'crear_reservacion_gastronomica' c.id %}" type="button"
+                   class="btn btn-outline-primary btn-sm">
+                    Reservar
+                </a>
+                <a href="#" type="button" class="btn btn-outline-warning btn-sm">
+                    Galeria
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

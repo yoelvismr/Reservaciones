@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Dashboard Template · Bootstrap v5.1</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static '' %}libs/plugins/font-awesome-5.11.1/css/all.min.css">
+    <!-- bootstrap-5.2.1-dist -->
+    <link rel="stylesheet" href="{% static '' %}libs/bootstrap-5.2.1-dist/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="{% static '' %}libs/plugins/jquery/jquery.min.js"></script>
+    <!-- Sweetalert2 -->
+    <script src="{% static '' %}libs/sweetalert2-9.10.0/sweetalert2.all.min.js"></script>
+    <!-- Jquery Confirm -->
+    <link rel="stylesheet" href="{% static '' %}libs/jquery-confirm-v3.3.4/jquery-confirm.min.css">
+    <script src="{% static '' %}libs/jquery-confirm-v3.3.4/jquery-confirm.min.js"></script>
+    <!-- Functions -->
+    <script src="{% static '' %}js/dashboard/functions.js"></script>
+    <script src="{% static '' %}js/dashboard/main.js"></script>
+    <script src="{% static '' %}libs/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="{% static '' %}libs/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <link rel="stylesheet" href="{% static '' %}css/estilos.css">
+    <link href="{% static '' %}css/dashboard.css" rel="stylesheet">
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+{% block body %}
+
+{% endblock %}
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+
+</script>
+</html>
